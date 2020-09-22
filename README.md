@@ -6,11 +6,11 @@ Code repository for "Free View Synthesis", ECCV 2020.
 
 ## Data
 
-- [Tanks and Temples](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_tat.tar.gz)
-- [New Recordings](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_own.tar.gz)
+- [Tanks and Temples](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_tat.tar.gz)
+- [New Recordings](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_own.tar.gz)
 
-We provide the preprocessed Tanks and Temples dataset as we used it for training and evaluation [here](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_tat.tar.gz). 
-Our new recordings can be downloaded in a preprocessed version from [here](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_own.tar.gz). 
+We provide the preprocessed Tanks and Temples dataset as we used it for training and evaluation [here](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_tat.tar.gz). 
+Our new recordings can be downloaded in a preprocessed version from [here](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_own.tar.gz). 
 
 We used [COLMAP](https://colmap.github.io/) for camera registration, multi-view stereo and surface reconstruction on full resolution. 
 The packages above contain the already undistorted and registered images.

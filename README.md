@@ -1,16 +1,62 @@
-# FreeViewSynthesis
+# Free View Synthesis
 Code repository for "Free View Synthesis", ECCV 2020.
 
-... coming soon ...
+
+## Setup
+
+Install the following Python packages in your Python environment
+
+```
+- numpy (1.19.1)
+- scikit-image (0.15.0)
+- pillow (7.2.0)
+- pytorch (1.6.0)
+- torchvision (0.7.0)
+```
+
+Clone the repository and initialize the submodule
+
+```bash
+git clone https://github.com/intel-isl/FreeViewSynthesis.git
+cd FreeViewSynthesis
+git submodule update --init --recursive
+```
+
+Finally, build the Python extension needed for preprocessing
+
+```
+cd ext/preprocess
+cmake -DCMAKE_BUILD_TYPE=Release .
+make 
+```
+
+
+## Run Free View Synthesis
+
+Make sure you adapted the paths in `config.py`!
+
+Then run the evaluation via 
+
+```bash
+python exp.py --net rnn_vgg16unet3_gruunet4.64.3 --cmd eval --iter last --eval-dsets tat-subseq --eval-scale 0.5
+```
+
+This will run the pretrained network on the four Tanks and Temples sequences.
+
+To train the network from scratch you can run
+
+```bash
+python exp.py --net rnn_vgg16unet3_gruunet4.64.3 --cmd retrain
+```
 
 
 ## Data
 
-- [Tanks and Temples](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_tat.tar.gz)
-- [New Recordings](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_own.tar.gz)
+- [Tanks and Temples](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_tat.tar.gz)
+- [New Recordings](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_own.tar.gz)
 
-We provide the preprocessed Tanks and Temples dataset as we used it for training and evaluation [here](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_tat.tar.gz). 
-Our new recordings can be downloaded in a preprocessed version from [here](https://storage.googleapis.com/isl-datasets/FVS/ibr3d_own.tar.gz). 
+We provide the preprocessed Tanks and Temples dataset as we used it for training and evaluation [here](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_tat.tar.gz). 
+Our new recordings can be downloaded in a preprocessed version from [here](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/ibr3d_own.tar.gz). 
 
 We used [COLMAP](https://colmap.github.io/) for camera registration, multi-view stereo and surface reconstruction on full resolution. 
 The packages above contain the already undistorted and registered images.
@@ -57,3 +103,5 @@ Please cite our [paper](http://vladlen.info/papers/FVS.pdf) if you find this wor
 ## Video
 
 [![Free View Synthesis Video](https://img.youtube.com/vi/JDJPn3ZtfZs/0.jpg)](https://www.youtube.com/watch?v=JDJPn3ZtfZs)
+
+

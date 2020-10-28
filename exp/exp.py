@@ -183,7 +183,7 @@ class Worker(co.mytorch.Worker):
         ibr_path = dense_dir / f"ibr3d_pw_{self.train_scale:.2f}"
         dset = self.get_pw_dataset(
             name=f'tat_{dset.replace("/", "_")}',
-            ibr_dir=ibr_dir,
+            ibr_dir=ibr_path,
             im_size=None,
             pad_width=16,
             patch=(self.train_patch, self.train_patch),

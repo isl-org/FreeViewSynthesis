@@ -33,7 +33,16 @@ make
 
 ## Run Free View Synthesis
 
-Make sure you adapted the paths in `config.py`!
+Make sure you adapted the paths in `config.py` to point to the downloaded data!
+
+You can download the pre-trained models [here](https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/experiments.tar.gz)
+
+```bash
+# in FreeViewSynthesis directory
+wget https://storage.googleapis.com/isl-datasets/FreeViewSynthesis/experiments.tar.gz
+tar xvzf experiments.tar.gz
+# there should now be net*params files in exp/experiments/*/
+```
 
 Then run the evaluation via 
 

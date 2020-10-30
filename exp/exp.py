@@ -180,7 +180,7 @@ class Worker(co.mytorch.Worker):
 
     def get_train_set_tat(self, dset):
         dense_dir = config.tat_root / dset / "dense"
-        ibr_path = dense_dir / f"ibr3d_pw_{self.train_scale:.2f}"
+        ibr_dir = dense_dir / f"ibr3d_pw_{self.train_scale:.2f}"
         dset = self.get_pw_dataset(
             name=f'tat_{dset.replace("/", "_")}',
             ibr_dir=ibr_dir,

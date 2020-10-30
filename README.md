@@ -30,6 +30,8 @@ cmake -DCMAKE_BUILD_TYPE=Release .
 make 
 ```
 
+Tested with Ubuntu 18.04 and macOS Catalina. If you do not have a C++17 compatible compiler, you can change the code as descibed [here](https://github.com/intel-isl/FreeViewSynthesis/issues/3#issuecomment-719325523).
+
 
 ## Run Free View Synthesis
 

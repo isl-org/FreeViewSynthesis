@@ -542,7 +542,10 @@ class Worker(object):
     def format_err_str(self, errs, div=1):
         err_list = []
         for v in errs.values():
-            if isinstance(v, (list, np.ndarray)):
+            if isinstance(v, np.ndarray):
+                err_list.extend(v.ravel())
+            elif isinstance(v, list):
+                v=np.array(v)
                 err_list.extend(v.ravel())
             else:
                 err_list.append(v)
